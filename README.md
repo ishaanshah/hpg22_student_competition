@@ -16,7 +16,7 @@ In other words, submissions might increase the render time at most by a factor o
 
 ## Improvements
 - While choosing which light to sample, we only choose lights which are on the correct side of the shading point, i.e. dot(cube_pos.xyz – shade_point, normal) > 0.
-- We choose the light to be sampled with a probability proportional to I/r2.
+- We choose the light to be sampled with a probability proportional to $\frac{I}{r^2}$.
 - While choosing the face from which to sample, we check in which octant the shading point lies in w.r.t to the light cubes coordinate frame. We only sample from the 3 surface which are visible from the shading point.
 - We sample from the BRDF using the VNDF technique described in https://jcgt.org/published/0007/04/01/.
 - We perform intersection tests in two stages, first, we intersect with bounding boxes surrounding the letters and if the intersection is successful then we perform the intersection with individual components.
